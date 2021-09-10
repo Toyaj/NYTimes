@@ -6,7 +6,6 @@
 //
 
 import XCTest
-//@testable import NYTimesTests
 @testable import NYTimes
 
 class HomeViewControllerTest: XCTestCase {
@@ -16,7 +15,7 @@ class HomeViewControllerTest: XCTestCase {
     let networkManager: NetworkManager = NetworkManager()
     var articleInfo: NYArticleModel?
     var articleMdl: ArcticleDetails?
-
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -27,7 +26,6 @@ class HomeViewControllerTest: XCTestCase {
         XCTAssertNotNil(homeViewCntr.ib_tblView)
         XCTAssertNotNil(homeViewCntr.ib_tblView.tableFooterView)
         XCTAssertNotNil(homeViewCntr.progressHUD)
-        XCTAssertEqual(homeViewCntr.title, Constant.ViewControllerTitle.homeTitle.rawValue)
         
         do {
             if let filePath = Bundle.init(for: NYTimesTests.self).path(forResource: "Articles", ofType: "json"), let data = NSData(contentsOfFile: filePath) {
@@ -42,7 +40,12 @@ class HomeViewControllerTest: XCTestCase {
         }
         
     }
+    
+    func testViewControllerTitle() {
+        XCTAssertEqual(homeViewCntr.title, Constant.ViewControllerTitle.homeTitle.rawValue)
 
+    }
+    
     func testLoadViewSetsTablDataSource() {
         XCTAssertTrue(homeViewCntr.ib_tblView?.dataSource is NYTimes.HomeViewController)
     }
@@ -69,19 +72,20 @@ class HomeViewControllerTest: XCTestCase {
         let actualCell = homeViewCntr.ib_tblView.dataSource?.tableView(homeViewCntr.ib_tblView, cellForRowAt: IndexPath(row: 0, section: 0))
         
         guard let cell = actualCell as? ArticleTableViewCell else {
-             return
+            return
         }
         cell.viewModel.model = viewModel.getArticleDetail(item: 0)
+        XCTAssertNotNil(viewModel.getArticleDetail(item: 0))
+        XCTAssertNotNil(cell.viewModel.model)
         cell.prepareForCell()
         let arcticleDetails: ArcticleDetails = (viewModel.model?[value])!
-        cell.setSelected(true, animated: true)
         XCTAssertEqual(cell.viewModel.model?.assetID, arcticleDetails.assetID)
     }
     
     func testDidSelectRowAtIndex() {
         
         homeViewCntr.ib_tblView.delegate?.tableView?(homeViewCntr.ib_tblView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertNotNil(viewModel.getArticleDetail(item: 0))
     }
-
-
+    
 }

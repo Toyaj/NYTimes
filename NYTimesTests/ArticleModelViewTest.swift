@@ -29,75 +29,72 @@ class ArticleModelViewTest: XCTestCase {
     
     func testTittle() {
         let title = mdlView.title
-        XCTAssertEqual(title, "U.S. Soldier Tests Positive for Virus in South Korea")
+        XCTAssertEqual(title, "Michael K. Williams, Omar From ‘The Wire,’ Is Dead at 54")
     }
     
     func testpublishDate() {
         let publishDate = mdlView.publishDate
-        XCTAssertEqual(publishDate, "2020-02-25")
+        XCTAssertEqual(publishDate, "2021-09-06")
     }
     
     func testSectionName() {
         let sectionName = mdlView.sectionName
-        XCTAssertEqual(sectionName, "World")
+        XCTAssertEqual(sectionName, "Arts")
     }
     
     func testSubSectionName() {
         let subSectionName = mdlView.subSectionName
-        XCTAssertEqual(subSectionName, "Asia Pacific")
+        XCTAssertEqual(subSectionName, "")
     }
     
     func testThumbnailImageURL() {
         let thumbnailImg = mdlView.thumnailUrl
-        XCTAssertEqual(thumbnailImg, "https://static01.nyt.com/images/2020/02/26/world/26virus-briefing-1sub/26virus-briefing-1sub-thumbStandard-v3.jpg")
+        XCTAssertEqual(thumbnailImg, "https://static01.nyt.com/images/2021/09/07/obituaries/07michaelwilliams-obit1-sub/07michaelwilliams-obit1-sub-thumbStandard.jpg")
     }
     
     func testImageURL() {
         let img = mdlView.imageURl
-        XCTAssertEqual(img, "https://static01.nyt.com/images/2020/02/26/world/26virus-briefing-1sub/26virus-briefing-1sub-mediumThreeByTwo440-v3.jpg")
+        XCTAssertEqual(img, "https://static01.nyt.com/images/2021/09/07/obituaries/07michaelwilliams-obit1-sub/07michaelwilliams-obit1-sub-mediumThreeByTwo440.jpg")
     }
     
     func testDescriptionOFArticle() {
         let description = mdlView.description
-        XCTAssertEqual(description, "The soldier, the first U.S. service member known to be infected, has been quarantined in his off-base residence, the military said.")
+        XCTAssertEqual(description, "Mr. Williams, who also starred in “Boardwalk Empire” and “Lovecraft Country,” was best known for his role as Omar Little in the David Simon HBO series.")
     }
     
     func testgetTitleOfArticle() {
         let title =  mdlView.getTitleOfArticle()
-        XCTAssertEqual(title, "U.S. Soldier Tests Positive for Virus in South Korea")
+        XCTAssertEqual(title, "Michael K. Williams, Omar From ‘The Wire,’ Is Dead at 54")
     }
     
     func testgetPublishDate() {
         let publishDate = mdlView.getPublishDate()
-        XCTAssertEqual(publishDate, "2020-02-25")
+        XCTAssertEqual(publishDate, "2021-09-06")
     }
     
     func testgetSectionName() {
         let sectionName = mdlView.getSectionName()
-        XCTAssertEqual(sectionName, "World")
+        XCTAssertEqual(sectionName, "Arts")
     }
     
     func testgetSubSectionName() {
         let subSectionName = mdlView.getSubSectionName()
-        
-        guard  mdlView.getSubSectionName() != "" else { XCTFail("No Data"); return }
-        
-        XCTAssertEqual(subSectionName, "Asia Pacific")
+        XCTAssertEqual(subSectionName, "")
     }
     
     func testgetThumbnailImageURL() {
         let thumbnailImg = mdlView.getThumbnailImageURL()
-        XCTAssertEqual(thumbnailImg, "https://static01.nyt.com/images/2020/02/26/world/26virus-briefing-1sub/26virus-briefing-1sub-thumbStandard-v3.jpg")
+        XCTAssertEqual(thumbnailImg, "https://static01.nyt.com/images/2021/09/07/obituaries/07michaelwilliams-obit1-sub/07michaelwilliams-obit1-sub-thumbStandard.jpg")
     }
     
     func testgetImageURL() {
         let img = mdlView.getImageURL()
-        XCTAssertEqual(img, "https://static01.nyt.com/images/2020/02/26/world/26virus-briefing-1sub/26virus-briefing-1sub-mediumThreeByTwo440-v3.jpg")
+        XCTAssertEqual(img, "https://static01.nyt.com/images/2021/09/07/obituaries/07michaelwilliams-obit1-sub/07michaelwilliams-obit1-sub-mediumThreeByTwo440.jpg")
     }
     
     func testgetDescriptionOFArticle() {
         let description = mdlView.getDescriptionOFArticle()
-        XCTAssertEqual(description, "The soldier, the first U.S. service member known to be infected, has been quarantined in his off-base residence, the military said.")
+        XCTAssertEqual(description, "Mr. Williams, who also starred in “Boardwalk Empire” and “Lovecraft Country,” was best known for his role as Omar Little in the David Simon HBO series.")
     }
     
 }
