@@ -62,5 +62,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NYTimesAppKey</key>
+	<string>8GstsrYFxhA7lKChT5gFSfrJj0xvDUd9</string>
 </dict>
 </plist>
