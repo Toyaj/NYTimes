@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>NYTimesTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E2B2BE6026EA695E000C2DDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2B2BE7626EA695F000C2DDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2B2BE8126EA695F000C2DDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
