@@ -1,0 +1,46 @@
+{
+    "uri": "nyt://article/940caf64-4c4b-57a2-8548-40ae4c9d213b",
+    "url": "https://www.nytimes.com/2020/02/25/world/asia/coronavirus-news.html",
+    "id": 100000006997520,
+    "asset_id": 100000006997520,
+    "source": "New York Times",
+    "published_date": "2020-02-25",
+    "updated": "2020-02-26 10:46:01",
+    "section": "World",
+    "subsection": "Asia Pacific",
+    "nytdsection": "world",
+    "adx_keywords": "Coronavirus (2019-nCoV);Epidemics;Travel Warnings;United States Economy;Stocks and Bonds;New York Times;Italy;Iran;China",
+    "column": null,
+    "byline": "",
+    "type": "Article",
+    "title": "U.S. Soldier Tests Positive for Virus in South Korea",
+    "abstract": "The soldier, the first U.S. service member known to be infected, has been quarantined in his off-base residence, the military said.",
+    "des_facet": ["Coronavirus (2019-nCoV)", "Epidemics", "Travel Warnings", "United States Economy", "Stocks and Bonds"],
+    "org_facet": ["New York Times"],
+    "per_facet": [],
+    "geo_facet": ["Italy", "Iran", "China"],
+    "media": [{
+        "type": "image",
+        "subtype": "photo",
+        "caption": "The entrance to Camp Walker, a U.S. Army base in Daegu, South Korea, on Thursday. A U.S. soldier found to be infected with the coronavirus had visited the base on Monday.",
+        "copyright": "Kim Hyun-Tae/Yonhap, via Associated Press",
+        "approved_for_syndication": 1,
+        "media-metadata": [{
+            "url": "https://static01.nyt.com/images/2020/02/26/world/26virus-briefing-1sub/26virus-briefing-1sub-thumbStandard-v3.jpg",
+            "format": "Standard Thumbnail",
+            "height": 75,
+            "width": 75
+        }, {
+            "url": "https://static01.nyt.com/images/2020/02/26/world/26virus-briefing-1sub/26virus-briefing-1sub-mediumThreeByTwo210-v3.jpg",
+            "format": "mediumThreeByTwo210",
+            "height": 140,
+            "width": 210
+        }, {
+            "url": "https://static01.nyt.com/images/2020/02/26/world/26virus-briefing-1sub/26virus-briefing-1sub-mediumThreeByTwo440-v3.jpg",
+            "format": "mediumThreeByTwo440",
+            "height": 293,
+            "width": 440
+        }]
+    }],
+    "eta_id": 0
+}

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
+ final class HomeViewController: UIViewController {
     
     @IBOutlet weak var ib_tblView: UITableView!
     let mdlView: HomeModelView = HomeModelView()
