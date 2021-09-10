@@ -14,7 +14,7 @@ class NetworkManager {
     func getNYArticles(completionHandler: @escaping (Result<[ArcticleDetails], Error>) -> Void) {
         
         let articleUrl = "\(ServiceApi.url)\(Bundle.main.object(forInfoDictionaryKey: "NYTimesAppKey") ?? "")"
-        guard let url = URL(string: articleUrl)  else {return}
+        guard let url = URL(string: articleUrl)  else { return }
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
                 print("Error with fetching films: \(error)")

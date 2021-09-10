@@ -27,8 +27,23 @@ class HomeModelViewTest: XCTestCase {
         }
     }
     
+    func testNetworkManager() {
+        XCTAssertNotNil(mdlView.networkManager)
+    }
+    
     func testNYArticleModel() {
         XCTAssertEqual(articleInfo?.results.count, 20)
     }
     
+    func testArticleAPICall() {
+
+        XCTAssertNotNil(mdlView.networkManager.getNYArticles(completionHandler: { result in
+            switch result {
+            case .success(let articleDetails):
+                XCTAssertNotNil(articleDetails)
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            }
+        }))
+    }
 }

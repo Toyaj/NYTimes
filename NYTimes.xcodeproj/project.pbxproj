@@ -47,6 +47,7 @@
 		E2B2BE9426EA7072000C2DDB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2BE6826EA695E000C2DDB /* HomeViewController.swift */; };
 		E2DC10F226EBCA8400BEBAD4 /* NYConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC10F126EBCA8400BEBAD4 /* NYConstant.swift */; };
 		E2DC10F326EBCA8400BEBAD4 /* NYConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC10F126EBCA8400BEBAD4 /* NYConstant.swift */; };
+		E2DC10F526EBE6D600BEBAD4 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC10F426EBE6D600BEBAD4 /* HomeViewControllerTest.swift */; };
 		E2F3DB3E26EB41F800D67265 /* Article.json in Resources */ = {isa = PBXBuildFile; fileRef = E2F3DB3D26EB41F800D67265 /* Article.json */; };
 		E2F3DB4026EB420200D67265 /* Articles.json in Resources */ = {isa = PBXBuildFile; fileRef = E2F3DB3F26EB420200D67265 /* Articles.json */; };
 		E2F3DB4226EB475C00D67265 /* HomeModelViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3DB4126EB475C00D67265 /* HomeModelViewTest.swift */; };
@@ -108,6 +109,7 @@
 		E2B2BE8626EA695F000C2DDB /* NYTimesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimesUITests.swift; sourceTree = "<group>"; };
 		E2B2BE8826EA695F000C2DDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2DC10F126EBCA8400BEBAD4 /* NYConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYConstant.swift; sourceTree = "<group>"; };
+		E2DC10F426EBE6D600BEBAD4 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 		E2F3DB3D26EB41F800D67265 /* Article.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Article.json; sourceTree = "<group>"; };
 		E2F3DB3F26EB420200D67265 /* Articles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Articles.json; sourceTree = "<group>"; };
 		E2F3DB4126EB475C00D67265 /* HomeModelViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelViewTest.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				E2F3DB4326EB499C00D67265 /* NetworkManagerTest.swift */,
 				E2F3DB4926EB4F1F00D67265 /* NYArticleModelTest.swift */,
 				E2B2BE7B26EA695F000C2DDB /* NYTimesTests.swift */,
+				E2DC10F426EBE6D600BEBAD4 /* HomeViewControllerTest.swift */,
 			);
 			path = NYTimesTests;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				E2A0F04B26EB13550011BC07 /* ArticleTableViewCell.swift in Sources */,
 				E2A0F05026EB13850011BC07 /* ProgressHud.swift in Sources */,
 				E2A0F04D26EB135F0011BC07 /* Reachability.swift in Sources */,
+				E2DC10F526EBE6D600BEBAD4 /* HomeViewControllerTest.swift in Sources */,
 				E2B2BE7C26EA695F000C2DDB /* NYTimesTests.swift in Sources */,
 				E2A0F05126EB138A0011BC07 /* ArticleViewModel.swift in Sources */,
 				E2A0F04F26EB13810011BC07 /* UIView+Extension.swift in Sources */,
