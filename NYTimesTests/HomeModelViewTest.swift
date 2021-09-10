@@ -11,7 +11,7 @@ import XCTest
 class HomeModelViewTest: XCTestCase {
    
     var articleInfo: NYArticleModel?
-    let mdlView: HomeModelView = HomeModelView()
+    let mdlView: HomeViewModel = HomeViewModel()
     var articleMdl: ArcticleDetails?
     
     override func setUpWithError() throws {

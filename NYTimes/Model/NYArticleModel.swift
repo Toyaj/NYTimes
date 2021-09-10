@@ -9,7 +9,9 @@ import Foundation
 
 // MARK: - NYArticleModel
 struct NYArticleModel: Codable {
+    
     let results: [ArcticleDetails]
+    
     enum CodingKeys: String, CodingKey {
         case results
     }
@@ -17,6 +19,7 @@ struct NYArticleModel: Codable {
 
 // MARK: - ArcticleDetails
 struct ArcticleDetails: Codable {
+    
     let assetID: Int
     let publishedDate, section, subsection: String
     let title, abstract: String

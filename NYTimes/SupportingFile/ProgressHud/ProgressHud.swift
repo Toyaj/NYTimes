@@ -38,17 +38,18 @@ class ProgressHud: UIVisualEffectView {
     }
     
     func setup() {
+        
         contentView.addSubview(vibrancyView)
         contentView.addSubview(activityIndictor)
         contentView.addSubview(label)
         activityIndictor.startAnimating()
+        
     }
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
         if let superview = self.superview {
-            
             let width = superview.frame.size.width / 2.3
             let height: CGFloat = 50.0
             self.frame = CGRect(x: superview.frame.size.width / 2 - width / 2,

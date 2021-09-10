@@ -10,7 +10,7 @@ import XCTest
 
 class ArticleModelViewTest: XCTestCase {
     
-    let mdlView: ArticleModelView = ArticleModelView()
+    let mdlView: ArticleViewModel = ArticleViewModel()
     var articleMdl: ArcticleDetails?
     
     override func setUpWithError() throws {

@@ -11,20 +11,21 @@ class NetworkManager {
     
     // MARK: - API Call
     
-    func getNYArticles(completionHandler: @escaping (Result<[ArcticleDetails], NetworkError>) -> Void) {
-        let url = URL(string: "https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=8GstsrYFxhA7lKChT5gFSfrJj0xvDUd9")!
+    func getNYArticles(completionHandler: @escaping (Result<[ArcticleDetails], Error>) -> Void) {
         
+        let articleUrl = "\(ServiceApi.url)\(Bundle.main.object(forInfoDictionaryKey: "NYTimesAppKey") ?? "")"
+        guard let url = URL(string: articleUrl)  else {return}
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
                 print("Error with fetching films: \(error)")
-                completionHandler(.failure(.badURL))
+                completionHandler(.failure(error))
                 return
             }
-            
+
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 debugPrint("Error with the response, unexpected status code: \(response.debugDescription)")
-                completionHandler(.failure(.badURL))
+                completionHandler(.failure(error as! Error))
                 return
             }
             
@@ -37,6 +38,3 @@ class NetworkManager {
     }
 }
 
-enum NetworkError: Error {
-    case badURL
-}

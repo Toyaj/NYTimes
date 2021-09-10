@@ -7,17 +7,19 @@
 
 import UIKit
 
- final class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     @IBOutlet weak var ib_tblView: UITableView!
-    let mdlView: HomeModelView = HomeModelView()
-    let networkManager: NetworkManager = NetworkManager()
-    let progressHUD = ProgressHud(text: "Processing...")
+    
+    let viewModel: HomeViewModel = HomeViewModel()
+    let progressHUD = ProgressHud(text: Constant.ProgressHud.text.rawValue)
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
-        self.title = "NY Times Most Popular"
-        ib_tblView.register(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleTableViewCell")
+        self.title = Constant.ViewControllerTitle.homeTitle.rawValue
+        ib_tblView.register(UINib(nibName: Constant.TableViewCellIdentifier.article.rawValue, bundle: nil),
+                            forCellReuseIdentifier: Constant.TableViewCellIdentifier.article.rawValue)
         ib_tblView.tableFooterView = UIView()
         self.view.addSubview(progressHUD)
         getArticles()
@@ -26,26 +28,28 @@ import UIKit
     
     // MARK: - APICall
     func getArticles() {
+        
         if Reachability.isConnectedToNetwork() {
             progressHUD.show()
-            networkManager.getNYArticles { result in
+            viewModel.getArticles { result in
                 switch result {
-                case .success(let arcticleDetails):
-                    self.updateViewModel(with: arcticleDetails)
+                case .success(_):
+                    self.updateView()
                 case .failure(_):
                     self.showAlert()
                 }
             }
         } else {
-            self.alert(message: "Make sure your device is connected to the internet.", title: "No Internet Connection")
+            self.alert(message: Constant.Alert.internetMessage.rawValue,
+                       title: Constant.Alert.internetTitle.rawValue)
         }
     }
 }
 
 private extension HomeViewController {
     
-    func updateViewModel(with articleDetails: [ArcticleDetails]) {
-        mdlView.model = articleDetails
+    func updateView() {
+       
         DispatchQueue.main.async {
             self.progressHUD.hide()
             self.ib_tblView.reloadData()
@@ -53,9 +57,11 @@ private extension HomeViewController {
     }
     
     func showAlert() {
+       
         DispatchQueue.main.async {
             self.progressHUD.hide()
-            self.alert(message: "Please try after sometime", title: "Alert")
+            self.alert(message: Constant.Alert.apiFailMessage.rawValue,
+                       title: Constant.Alert.alert.rawValue)
         }
     }
 }
