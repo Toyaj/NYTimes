@@ -9,7 +9,7 @@ import XCTest
 @testable import NYTimes
 
 class NetworkManagerTest: XCTestCase {
-
+    
     let networkManager: NetworkManager = NetworkManager()
     
     override func setUp() {
@@ -17,13 +17,8 @@ class NetworkManagerTest: XCTestCase {
     }
     
     func testgetNYArticles() {
-        networkManager.getNYArticles { result in
-            switch result {
-            case .success(let articleDetails):
-                XCTAssertNotNil(articleDetails)
-            case .failure(_):
-                debugPrint("bad")
-            }
-        }
+        
+        XCTAssertNotNil(networkManager.getNYArticles(completionHandler:))
+        
     }
 }

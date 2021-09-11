@@ -17,15 +17,13 @@ class HomeViewControllerTest: XCTestCase {
     var articleMdl: ArcticleDetails?
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         self.homeViewCntr = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as?  NYTimes.HomeViewController
         self.homeViewCntr.loadView()
         self.homeViewCntr.viewDidLoad()
         homeViewCntr.ib_tblView.register(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleTableViewCell")
-        XCTAssertNotNil(homeViewCntr.ib_tblView)
-        XCTAssertNotNil(homeViewCntr.ib_tblView.tableFooterView)
-        XCTAssertNotNil(homeViewCntr.progressHUD)
+      
         
         do {
             if let filePath = Bundle.init(for: NYTimesTests.self).path(forResource: "Articles", ofType: "json"), let data = NSData(contentsOfFile: filePath) {
@@ -41,9 +39,15 @@ class HomeViewControllerTest: XCTestCase {
         
     }
     
+    func testUXAllocation() {
+        XCTAssertNotNil(homeViewCntr.ib_tblView)
+        XCTAssertNotNil(homeViewCntr.ib_tblView.tableFooterView)
+        XCTAssertNotNil(homeViewCntr.progressHUD)
+    }
+    
     func testViewControllerTitle() {
         XCTAssertEqual(homeViewCntr.title, Constant.ViewControllerTitle.homeTitle.rawValue)
-
+        
     }
     
     func testLoadViewSetsTablDataSource() {
@@ -78,6 +82,8 @@ class HomeViewControllerTest: XCTestCase {
         XCTAssertNotNil(viewModel.getArticleDetail(item: 0))
         XCTAssertNotNil(cell.viewModel.model)
         cell.prepareForCell()
+        XCTAssertNotNil(cell.prepareForCell())
+        XCTAssertEqual(cell.ib_ThumImgView.cornerRadius, 25)
         let arcticleDetails: ArcticleDetails = (viewModel.model?[value])!
         XCTAssertEqual(cell.viewModel.model?.assetID, arcticleDetails.assetID)
     }
@@ -87,5 +93,22 @@ class HomeViewControllerTest: XCTestCase {
         homeViewCntr.ib_tblView.delegate?.tableView?(homeViewCntr.ib_tblView, didSelectRowAt: IndexPath(row: 0, section: 0))
         XCTAssertNotNil(viewModel.getArticleDetail(item: 0))
     }
+    
+    func testUpdateView() {
+        XCTAssertNotNil(homeViewCntr.updateView())
+    }
+    
+    func testShowAlert() {
+        XCTAssertNotNil(homeViewCntr.showAlert())
+    }
+    
+    func testGetArticles() {
+        XCTAssertNotNil(homeViewCntr.getArticles())
+    }
+    
+    func testAlert() {
+        XCTAssertNotNil(homeViewCntr.alert(message:"",title: ""))
+    }
+    
     
 }

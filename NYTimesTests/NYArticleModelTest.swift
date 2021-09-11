@@ -26,7 +26,7 @@ class NYArticleModelTest: XCTestCase {
         }
     }
     
-    func testNYArticleModel() {
+    func testArticleTotalCount() {
         XCTAssertEqual(articleInfo?.results.count, 20)
     }
 }

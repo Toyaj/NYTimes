@@ -35,7 +35,7 @@ extension ArticleDetailViewController {
         ib_TittleLabel.text = mdlView.title
         ib_SectionSubSectionLabel.text = "\(mdlView.sectionName), \(mdlView.subSectionName)"
         ib_PublishDateLabel.text = mdlView.publishDate
-        ib_ArticleDescLabel.text = mdlView.description        
+        ib_ArticleDescLabel.text = mdlView.description
         guard let imageURL = mdlView.imageURl else { return }
         setImage(url: imageURL)
 

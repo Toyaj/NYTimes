@@ -9,7 +9,7 @@ import XCTest
 @testable import NYTimes
 
 class HomeModelViewTest: XCTestCase {
-   
+    
     var articleInfo: NYArticleModel?
     let mdlView: HomeViewModel = HomeViewModel()
     var articleMdl: ArcticleDetails?
@@ -36,7 +36,7 @@ class HomeModelViewTest: XCTestCase {
     }
     
     func testArticleAPICall() {
-
+        
         XCTAssertNotNil(mdlView.networkManager.getNYArticles(completionHandler: { result in
             switch result {
             case .success(let articleDetails):
@@ -45,5 +45,19 @@ class HomeModelViewTest: XCTestCase {
                 XCTAssertNotNil(error)
             }
         }))
+    }
+    
+    func testGetArticles() {
+        XCTAssertNotNil(mdlView.getArticles(completionHandler:))
+        mdlView.getArticles { result in
+            
+            switch result {
+            case .success(let isSucess):
+                XCTAssertTrue(isSucess)
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            }
+            XCTAssertNotNil(result)
+        }
     }
 }

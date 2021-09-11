@@ -46,7 +46,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
-private extension HomeViewController {
+ extension HomeViewController {
     
     func updateView() {
        
