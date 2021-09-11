@@ -173,6 +173,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E277280B26ECF21200B41159 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E2B2BE9726EA70CE000C2DDB /* Model */,
+				E277280E26ECF47400B41159 /* View */,
+				E277280F26ECF4A200B41159 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E277280C26ECF21D00B41159 /* ArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E2B2BE9926EA70F3000C2DDB /* View */,
+				E2B2BE9826EA70DC000C2DDB /* ViewModel */,
+			);
+			path = ArticleDetails;
+			sourceTree = "<group>";
+		};
+		E277280D26ECF22C00B41159 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2B2BE6826EA695E000C2DDB /* HomeViewController.swift */,
+				E2AB2CF726EAFABA009A07B7 /* HomeViewController+TableView.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E277280E26ECF47400B41159 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2AB2D0726EB057D009A07B7 /* TableViewCell */,
+				E277280D26ECF22C00B41159 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E277280F26ECF4A200B41159 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E2AB2CFE26EB0279009A07B7 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E277B86A26EAEC5300389CCC /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,12 +294,9 @@
 		E2B2BE6326EA695E000C2DDB /* NYTimes */ = {
 			isa = PBXGroup;
 			children = (
+				E277280C26ECF21D00B41159 /* ArticleDetails */,
+				E277280B26ECF21200B41159 /* Home */,
 				E2B2BE9526EA7093000C2DDB /* Delegate */,
-				E2B2BE9626EA70B3000C2DDB /* Controller */,
-				E2B2BE9726EA70CE000C2DDB /* Model */,
-				E2B2BE9926EA70F3000C2DDB /* View */,
-				E2B2BE9826EA70DC000C2DDB /* ViewModel */,
-				E2B2BE9A26EA7102000C2DDB /* NetworkManager */,
 				E2B2BE9B26EA7132000C2DDB /* SupportingFile */,
 				E277B86A26EAEC5300389CCC /* Storyboard */,
 				E2B2BE7226EA695F000C2DDB /* Info.plist */,
@@ -267,15 +309,15 @@
 			isa = PBXGroup;
 			children = (
 				E2F3DB3D26EB41F800D67265 /* Article.json */,
+				E2DC10F626EBFA7F00BEBAD4 /* ArticleDetailViewControllerTest.swift */,
 				E2F3DB4526EB4B0700D67265 /* ArticleModelViewTest.swift */,
 				E2F3DB3F26EB420200D67265 /* Articles.json */,
 				E2F3DB4126EB475C00D67265 /* HomeModelViewTest.swift */,
+				E2DC10F426EBE6D600BEBAD4 /* HomeViewControllerTest.swift */,
 				E2B2BE7D26EA695F000C2DDB /* Info.plist */,
 				E2F3DB4326EB499C00D67265 /* NetworkManagerTest.swift */,
 				E2F3DB4926EB4F1F00D67265 /* NYArticleModelTest.swift */,
 				E2B2BE7B26EA695F000C2DDB /* NYTimesTests.swift */,
-				E2DC10F426EBE6D600BEBAD4 /* HomeViewControllerTest.swift */,
-				E2DC10F626EBFA7F00BEBAD4 /* ArticleDetailViewControllerTest.swift */,
 			);
 			path = NYTimesTests;
 			sourceTree = "<group>";
@@ -298,14 +340,12 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
-		E2B2BE9626EA70B3000C2DDB /* Controller */ = {
+		E2B2BE9626EA70B3000C2DDB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E2B2BE6826EA695E000C2DDB /* HomeViewController.swift */,
-				E2AB2CF726EAFABA009A07B7 /* HomeViewController+TableView.swift */,
 				E2AB2CF926EB0245009A07B7 /* ArticleDetailViewController.swift */,
 			);
-			path = Controller;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		E2B2BE9726EA70CE000C2DDB /* Model */ = {
@@ -320,7 +360,6 @@
 			isa = PBXGroup;
 			children = (
 				E2AB2CFD26EB0279009A07B7 /* ArticleViewModel.swift */,
-				E2AB2CFE26EB0279009A07B7 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -328,7 +367,7 @@
 		E2B2BE9926EA70F3000C2DDB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E2AB2D0726EB057D009A07B7 /* TableViewCell */,
+				E2B2BE9626EA70B3000C2DDB /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,10 +384,11 @@
 			isa = PBXGroup;
 			children = (
 				E2DC10F026EBCA6900BEBAD4 /* Constant */,
+				E2AB2CF126EAF8F9009A07B7 /* Extension */,
+				E2B2BE9A26EA7102000C2DDB /* NetworkManager */,
+				E2AB2CF026EAF8E9009A07B7 /* ProgressHud */,
 				E2AB2D0826EB05A4009A07B7 /* Reachability */,
 				E2AB2CF426EAF9A7009A07B7 /* URL */,
-				E2AB2CF126EAF8F9009A07B7 /* Extension */,
-				E2AB2CF026EAF8E9009A07B7 /* ProgressHud */,
 			);
 			path = SupportingFile;
 			sourceTree = "<group>";
